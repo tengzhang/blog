@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iris.mapper.ArchiveMapper">
+
+    <select id="queryAllArchive" resultType="Archive">
+        select `id` as id,
+        `admin_id` as adminId,
+        `title` as title,
+        `content` as content,
+        `view_count` as viewCount,
+        `status` as status,
+        `create_time` as createTime
+        from `t_archive`
+        order by id DESC
+    </select>
+
+    <select id="queryArchiveById" resultType="Archive">
+        select `id` as id,
+        `admin_id` as adminId,
+        `title` as title,
+        `content` as content,
+        `view_count` as viewCount,
+        `status` as status,
+        `create_time` as createTime
+        from `t_archive`
+        where `id` = #{id}
+    </select>
+
+    <insert id="insertArchive" useGeneratedKeys="true" keyProperty="id">
+        insert into t_archive(`admin_id`, `title`, `content`, `view_count`, `status`, `create_time`)
+                        values(#{archive.adminId}, #{archive.title}, #{archive.content}, #{archive.viewCount}, #{archive.status}, #{archive.createTime})
+        <selectKey resultType="Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() as ID from `t_archive` limit 1
+        </selectKey>
+    </insert>
+
+    <update id="updateArchive">
+        update `t_archive` set
+        `admin_id` = #{archive.adminId},
+        `title` = #{archive.title},
+        `content` = #{archive.content},
+        `view_count` = #{archive.viewCount},
+        `status` = #{archive.status},
+        `create_time` = #{archive.createTime}
+        where `id` = #{archive.id}
+    </update>
+
+    <select id="queryCountByCondition" resultType="Integer">
+        select count(1) from `t_archive`
+        where `status` != 0
+        <if test="search != null">
+            and `title` like "%"#{search}"%"
+        </if>
+    </select>
+
+    <select id="queryByCondition" resultType="Archive">
+        select `id` as id,
+        `admin_id` as adminId,
+        `title` as title,
+        `content` as content,
+        `view_count` as viewCount,
+        `status` as status,
+        `create_time` as createTime
+        from `t_archive`
+        where `status` != 0
+        <if test="search != null">
+            and `title` like "%"#{search}"%"
+        </if>
+        order by id DESC
+        limit #{pCurrent},#{pSize}
+    </select>
+</mapper>

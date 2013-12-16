@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.iris.common.entity.Admin" alias="Admin" />
+        <typeAlias type="com.iris.common.entity.Archive" alias="Archive" />
+    </typeAliases>
+    
+    <plugins>
+        <plugin interceptor="com.iris.common.dao.mybatis.QueryLogIntercepter"></plugin>
+        <plugin interceptor="com.iris.common.dao.mybatis.UpdateLogInterceptor"></plugin>
+    </plugins>
+</configuration>

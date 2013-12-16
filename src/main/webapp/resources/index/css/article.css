@@ -1,0 +1,24 @@
+
+.getArticles{
+    background: none repeat scroll 0 0 #1B262B;
+    color: #fff;
+    margin-bottom: 0px;     
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.getArticles .btn{
+    border-radius: 0px;
+}
+#content p{
+    font-size: 18px;
+    text-indent: 28px;
+}
+.jumbotron#content{
+    margin-bottom: 0px;
+    background: none repeat scroll 0 0 #ffffff;
+    border-bottom: 4px solid #EEEEEE;
+}
+#content h2{
+    color: #FF5544;
+}
+    

@@ -1,0 +1,35 @@
+#show_more{
+    background-color: #fff;
+    color: #333333;
+    border: 2px #999999 solid;
+    text-align: center;
+}
+#show_more i{
+    color: orange;
+    font-size: 125%;
+}
+#content .row:nth-child(2n) {
+    background: none repeat scroll 0 0 #1D8CC2;
+    padding: 40px 0;
+    margin-bottom: 0px;
+    border-bottom: 1px #FF5544 solid;
+}
+#content .row:nth-child(2n-1) {
+    background: none repeat scroll 0 0 #1B262B;
+    padding: 40px 0;
+    margin-bottom: 0px;
+    border-bottom: 1px #FF5544 solid;
+}
+#content .col-sm-2,#content .col-sm-4,#content .col-sm-10,#content .col-sm-12{
+    color: #fff;
+}
+.jumbotron#content{
+    background: none repeat scroll 0 0 #1D8CC2;
+}
+#content p{
+    font-size: 14px;
+}
+#content a{
+    color: #fff;
+}
+

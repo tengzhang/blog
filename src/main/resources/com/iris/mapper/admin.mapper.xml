@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.iris.mapper.AdminMapper">
+
+    <insert id="insertAdmin" useGeneratedKeys="true" keyProperty="id">
+        insert into t_admin(`name`, `password`, `status`, `create_time`)
+                      values(#{admin.name}, #{admin.password}, #{admin.status}, #{admin.createTime})
+        <selectKey resultType="Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID() as ID from `t_admin` limit 1
+        </selectKey>
+    </insert>
+
+    <select id="checkAdminName" resultType="Integer">
+        select count(1) from `t_admin` where `name` = #{name} 
+    </select>
+    
+    <select id="queryAdminById" resultType="Admin">
+        select `id` as id,
+        `name` as name,
+        `password` as password,
+        `status` as status,
+        `create_time` as createTime
+        from `t_admin`
+        where `id` = #{id}
+    </select>
+    
+    <select id="queryAllAdmin" resultType="Admin">
+        select `id` as id,
+        `name` as name,
+        `password` as password,
+        `status` as status,
+        `create_time` as createTime
+        from `t_admin`
+        order by id DESC
+    </select>
+
+    <update id="updateAdmin">
+        update `t_admin` set
+        `name` = #{admin.name},
+        `password` = #{admin.password},
+        `status` = #{admin.status},
+        `create_time` = #{admin.createTime}
+        where `id` = #{admin.id}
+    </update>
+
+    <select id="checkAdminLogin" resultType="Admin">
+        select `id` as id
+        from `t_admin`
+        where `name` = #{admin.name} and `password` = #{admin.password}
+    </select>
+</mapper>

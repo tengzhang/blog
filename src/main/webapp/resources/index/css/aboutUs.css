@@ -1,0 +1,14 @@
+
+#content p,#comment p{
+    font-size: 14px;
+    text-indent: 28px;
+}
+.jumbotron#content,.jumbotron#comment{
+    margin-bottom: 0px;
+    background: none repeat scroll 0 0 #314048;
+    border-bottom: 4px solid #EEEEEE;
+    color:#fff;
+}
+#content h2,#comment h2{
+    color: #FF5544;
+}

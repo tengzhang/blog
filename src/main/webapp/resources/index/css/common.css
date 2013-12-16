@@ -1,0 +1,39 @@
+body,h1,h2,h3,h4{
+    	font-family: '微软雅黑';
+}
+.navbar {
+    	border-radius: 0px;
+}
+.jumbotron#header{
+	background: none repeat scroll 0 0 #FFFFFF;
+	 	border-bottom: 4px solid #EEEEEE;
+	 	margin-bottom: 0px;
+}
+.jumbotron#header li{
+	font-size: 13px;
+}
+.jumbotron#header ul{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+.jumbotron#header .container{
+	position: relative;
+}
+.share{
+	background: none repeat scroll 0 0 #00ACED;
+	margin-bottom: 0px;
+	color: #fff;
+}
+.share i{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.footer{
+    background: none repeat scroll 0 0 #314048;
+    padding: 40px 0;
+    color: #fff;
+    text-align: center;
+}

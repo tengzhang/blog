@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+       default-autowire="byName" default-lazy-init="true">
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:/jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <context:annotation-config />
+
+    <context:component-scan base-package="com.iris" />
+
+    <!-- 配置service层日志 -->
+    <bean id="beforeAdvice" class="com.iris.common.Advice.LogAdvice" />
+    <aop:config>
+        <aop:pointcut expression="execution(* com.iris.service..*(..))" id="servicePointcut" />
+        <aop:advisor advice-ref="beforeAdvice" pointcut-ref="servicePointcut" />
+    </aop:config>
+    <import resource="database-config.xml" />
+    <import resource="mvc-config.xml" />
+
+</beans>

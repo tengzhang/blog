@@ -1,0 +1,77 @@
+
+.getArticles{
+		background: none repeat scroll 0 0 #1B262B;
+		color: #fff;
+		margin-bottom: 0px;		
+}
+.getArticles .btn{
+	border-radius: 0px;
+}
+#someArticles{
+	background: none repeat scroll 0 0 #1D8CC2;
+	padding: 40px 0;
+	margin-bottom: 0px;
+}
+.icon-feature {
+    background: none repeat scroll 0 0 #0C5F87;
+    border-radius: 100px;
+    display: block;
+    height: 80px;
+    line-height: 83px;
+    width: 80px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-size: 40px;
+    text-align: center;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    text-decoration: inherit;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    text-decoration: inherit;
+}
+#someArticles .col-sm-4{
+	color: #fff;
+}
+#someArticles .md-editor{
+	font-size: 14px;
+	height: 200px;
+    overflow: hidden;
+}
+#someArticles a{
+    font-size: 14px;
+    color: #fff;
+}
+#otherArticles i {
+    background: none repeat scroll 0 0 #1D8CC2;
+    border-radius: 40px;
+    color: #FFFFFF;
+    font-size: 16px;
+    height: 34px;
+    left: 0;
+    line-height: 34px;
+    text-align: center;
+    top: 3px;
+    width: 34px;
+}
+#otherArticles .col-sm-4{
+	height: 200px;
+}
+#otherArticles .md-editor {
+    font-size: 14px;
+    height: 150px;
+    overflow: hidden;
+}
+#otherArticles_1 .md-editor {
+    font-size: 14px;
+    height: 150px;
+    overflow: hidden;
+}
+.row#otherArticles {
+    margin-bottom: 30px;
+}
+.row#otherArticles_1{
+	margin-bottom: 30px;
+}
